@@ -2,7 +2,7 @@
 
 
 function createTask(formData) {
-    fetch('http://localhost:3333/Posts', {
+    fetch('http://localhost:3000/Posts', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ function createTask(formData) {
 
 // Function to fetch all tasks
 function fetchTasks() {
-    fetch('http://localhost:3333/posts')
+    fetch('http://localhost:3000/posts')
     .then(response => response.json())
     .then(data => {
         // Handle successful retrieval of tasks
@@ -44,7 +44,7 @@ function fetchTasks() {
 
 // Function to update a task
 function updateTask(taskId, formData) {
-    fetch(`http://localhost:3333/posts/${taskId}`, {
+    fetch(`http://localhost:3000/posts/${taskId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ function updateTask(taskId, formData) {
 
 // Function to delete a task
 function deleteTask(taskId) {
-    fetch(`http://localhost:3333/posts/${taskId}`, {
+    fetch(`http://localhost:3000/posts/${taskId}`, {
         method: 'DELETE'
     })
     .then(response => response.json())

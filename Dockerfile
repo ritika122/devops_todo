@@ -27,7 +27,7 @@ COPY --from=build /app /app
 RUN npm ci --only=production
 
 # Expose port 3333
-EXPOSE 3333
+EXPOSE 3000
 
 # Start the app
 CMD ["npm", "start"]

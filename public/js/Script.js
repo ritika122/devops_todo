@@ -1,5 +1,5 @@
 function createTask(formData) {
-  fetch('http://localhost:3333/Posts', {
+  fetch('http://localhost:3000/Posts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ document
   });
 
 function markComplete(taskId) {
-  fetch(`http://localhost:3333/Posts/${taskId}`, {
+  fetch(`http://localhost:3000/Posts/${taskId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function markComplete(taskId) {
 
 // Function to delete task
 function deleteTask(taskId) {
-  fetch(`http://localhost:3333/Posts/${taskId}`, {
+  fetch(`http://localhost:3000/Posts/${taskId}`, {
     method: 'DELETE',
   })
     .then((response) => {
@@ -87,7 +87,7 @@ function deleteTask(taskId) {
 
 // Function to fetch tasks from backend and display in UI
 function fetchTasks() {
-  fetch('http://localhost:3333/Posts')
+  fetch('http://localhost:3000/Posts')
     .then((response) => response.json())
     .then((tasks) => {
       const taskList = document.getElementById('taskList');
