@@ -1,0 +1,21 @@
+version: '3'
+services:
+  todo-app:
+    build: .
+    ports:
+      - "3333:3333"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./.env:/app/.env
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Sumanth@1234
+      MYSQL_DATABASE: adonis
+    ports:
+      - "3306:3306"
